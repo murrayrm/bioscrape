@@ -1,0 +1,11 @@
+sphinx
+sphinx_rtd_theme
+sphinx-copybutton
+sphinx-toggleprompt
+nbsphinx
+nbsphinx-link
+recommonmark
+pandoc
+numpydoc
+sphinx-math-dollar
+tomli; python_version < "3.11"
