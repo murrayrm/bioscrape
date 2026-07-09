@@ -15,8 +15,8 @@ This chapter provides a brief introduction to bioscrape.
 Motivation and Background
 ==========================
 
-Bioscrape ("Biological Stochastic Simulation of Single Cell Reactions
-and Parameter Estimation") is a Python package, written in Cython for
+Bioscrape ("Bio-circuit Stochastic Single-cell Reaction Analysis and
+Parameter Estimation") is a Python package, written in Cython for
 performance, for simulating and fitting chemical reaction network
 (CRN) models of biological systems.  It reads models from the Systems
 Biology Markup Language (SBML) or from a native model-building API,

@@ -1,6 +1,6 @@
-################################################################################################
-Bioscrape - Biological Stochastic Simulation of Single Cell Reactions and Parameter Estimation
-################################################################################################
+#########################################################################################
+Bioscrape - Bio-circuit Stochastic Single-cell Reaction Analysis and Parameter Estimation
+#########################################################################################
 
 Bioscrape is a Python package, written in Cython for speed, for the
 simulation and parameter estimation of chemical reaction network (CRN)
@@ -28,9 +28,10 @@ well as Bayesian parameter inference from experimental data.
 - Mailing list: `SBTools Google
   Group <https://groups.google.com/g/sbtools/>`_ (sbtools@googlegroups.com)
 - Source code: https://github.com/biocircuits/bioscrape
-- Preprint: `Fast and flexible simulation and parameter estimation for
-  synthetic biology using bioscrape
-  <https://www.biorxiv.org/content/10.1101/121152v3>`_
+- Paper: `Pandey, Poole, Swaminathan, Hsiao & Murray (2023), "Fast and
+  flexible simulation and parameter estimation for synthetic biology
+  using bioscrape," Journal of Open Source Software, 8(83), 5057
+  <https://doi.org/10.21105/joss.05057>`_
 - Bug reports: https://github.com/biocircuits/bioscrape/issues
 - Slack: Join the #bioscrape channel on SBTools slack: Ask on the
   public SBTools Google group to be added or send a message to one of
@@ -40,13 +41,17 @@ well as Bayesian parameter inference from experimental data.
 
 If the bioscrape package helped you in your research, please cite::
 
-  @article{bioscrape2019,
+  @article{Pandey2023bioscrape,
     title={Fast and flexible simulation and parameter estimation for
            synthetic biology using bioscrape},
-    author={A. Swaminathan and V. Hsiao and R. M. Murray},
-    journal={bioRxiv},
-    year={2019},
-    doi={10.1101/121152}
+    author={Pandey, Ayush and Poole, William and Swaminathan, Anandh
+            and Hsiao, Victoria and Murray, Richard M.},
+    journal={Journal of Open Source Software},
+    volume={8},
+    number={83},
+    pages={5057},
+    year={2023},
+    doi={10.21105/joss.05057}
   }
 
 or the GitHub site: https://github.com/biocircuits/bioscrape.

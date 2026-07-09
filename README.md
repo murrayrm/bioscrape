@@ -1,4 +1,4 @@
-# Bioscrape &mdash; Biological Stochastic Simulation of Single Cell Reactions and Parameter Estimation
+# Bioscrape &mdash; Bio-circuit Stochastic Single-cell Reaction Analysis and Parameter Estimation
 ## Python toolbox to simulate, analyze, and learn biological system models
 
 [![Build Status](https://github.com/biocircuits/bioscrape/actions/workflows/deploy_bioscrape.yml/badge.svg)](https://github.com/biocircuits/bioscrape/actions/workflows/deploy_bioscrape.yml)
@@ -15,7 +15,7 @@ Bioscrape is a Systems Biology Markup Language (SBML) simulator written in Cytho
 
 - **Mailing list:** [SBTools Google Group](https://groups.google.com/g/sbtools/) Email: sbtools@googlegroups.com
 - **Source:** https://github.com/biocircuits/bioscrape
-- **Preprint:** - [Fast and flexible simulation and parameter estimation for synthetic biology using bioscrape](https://www.biorxiv.org/content/10.1101/121152v3)
+- **Paper:** - [Fast and flexible simulation and parameter estimation for synthetic biology using bioscrape](https://doi.org/10.21105/joss.05057) (Pandey, Poole, Swaminathan, Hsiao & Murray, *Journal of Open Source Software*, 2023)
 - **Bug reports:** https://github.com/biocircuits/bioscrape/issues
 - **Slack** Join the #bioscrape channel on SBTools slack: Ask on the public SBTools Google group to be added or send a message to one of the maintainers. 
 
