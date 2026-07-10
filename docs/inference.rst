@@ -103,3 +103,18 @@ specification to the appropriate `~bioscrape.inference.Likelihood`:
 least-squares/maximum-likelihood alternative to MCMC sampling, built
 on `lmfit <https://lmfit.github.io/lmfit-py/>`_, for cases where a
 point estimate (rather than a full posterior) is sufficient.
+
+Real-world example
+==================
+
+For a worked example of these inference tools applied to experimental
+data, see [Pan+23b]_, which uses `~py_inference` to fit a model of
+integrase- and excisionase-mediated DNA recombination to cell-free
+expression data, as part of a broader modeling and analysis pipeline
+for characterizing engineered biological systems.
+
+.. [Pan+23b] Pandey A, Rodriguez ML, Poole W, Murray RM (2023)
+   Characterization of integrase and excisionase activity in a
+   cell-free protein expression system using a modeling and analysis
+   pipeline. *ACS Synthetic Biology* 12(2):511-523.
+   https://doi.org/10.1021/acssynbio.2c00534
