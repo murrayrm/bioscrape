@@ -100,6 +100,22 @@ docstrings can appear in the generated documentation; treat ``cdef``
 methods as the package's equivalent of a leading-underscore "private"
 convention.
 
+Adding new functionality
+---------------------------
+
+Bioscrape's core areas (propensities, delays, rules, volumes, volume
+splitters, priors/likelihoods, and PID interfaces) are each built
+around a base class with a family of interchangeable subclasses -- see
+:doc:`intro`. New functionality should follow this pattern: add a
+subclass of the relevant base class (`~bioscrape.types.Propensity`,
+`~bioscrape.types.Delay`, `~bioscrape.types.Rule`,
+`~bioscrape.types.Volume`, `~bioscrape.simulator.VolumeSplitter`,
+`~bioscrape.inference.Distribution`, `~bioscrape.inference.Likelihood`,
+`~bioscrape.pid_interfaces.PIDInterface`) rather than special-casing
+new behavior into an existing class. This keeps each class focused on
+one variant of its interface and keeps the package extensible without
+requiring changes to unrelated code.
+
 
 Documentation Guidelines
 ========================

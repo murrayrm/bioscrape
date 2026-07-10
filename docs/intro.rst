@@ -16,15 +16,23 @@ Motivation and Background
 ==========================
 
 Bioscrape ("Bio-circuit Stochastic Single-cell Reaction Analysis and
-Parameter Estimation") is a Python package, written in Cython for
-performance, for simulating and fitting chemical reaction network
-(CRN) models of biological systems.  It reads models from the Systems
-Biology Markup Language (SBML) or from a native model-building API,
-and simulates them deterministically (ODE) or stochastically
-(Gillespie's Stochastic Simulation Algorithm), including support for
-delayed reactions and cell volume/lineage dynamics.  Bioscrape also
-provides Bayesian parameter inference tools for fitting model
-parameters to experimental data.
+Parameter Estimation") is a Python package, with its simulation core
+written in Cython and compiled to native code, for simulating and
+fitting chemical reaction network (CRN) models of biological systems.
+It reads models from the Systems Biology Markup Language (SBML) or
+from a native model-building API, and simulates them deterministically
+(ODE) or stochastically (Gillespie's Stochastic Simulation Algorithm),
+including support for delayed reactions and cell volume/lineage
+dynamics.  Bioscrape also provides Bayesian parameter inference tools
+for fitting model parameters to experimental data.
+
+Because the simulation core is compiled rather than interpreted,
+simulation run times are close to what you would get from hand-written
+C.  This matters most for workloads that require many repeated
+simulations of the same model -- MCMC-based parameter inference
+(:doc:`inference`) and simulation of large lineages of dividing cells
+(:doc:`lineage`) in particular -- where simulation speed directly
+determines how long an analysis takes to run.
 
 Bioscrape is designed to be usable on its own, or as the simulation
 and inference back end for higher-level model-construction tools such
@@ -60,6 +68,22 @@ local sensitivity of simulated trajectories to model parameters. See
 **Lineage** (:mod:`bioscrape.lineage`) extends the simulation
 machinery to populations of dividing and interacting cells. See
 :doc:`lineage`.
+
+Within each of these areas, functionality is implemented as a small
+hierarchy of interchangeable classes rather than a single fixed
+implementation: propensities (`~bioscrape.types.Propensity`), delays
+(`~bioscrape.types.Delay`), rules (`~bioscrape.types.Rule`), volumes
+(`~bioscrape.types.Volume`), volume splitters
+(`~bioscrape.simulator.VolumeSplitter`), priors and likelihoods
+(`~bioscrape.inference.Distribution`,
+`~bioscrape.inference.Likelihood`), and PID interfaces
+(`~bioscrape.pid_interfaces.PIDInterface`) are all base classes with
+several built-in subclasses.  This is a deliberate design choice: each
+of these is meant to be extended with a custom subclass -- a new
+propensity type, a custom division rule, a new prior -- without
+needing to modify the rest of the package.  If you need behavior that
+isn't covered by a built-in subclass, look for the relevant base class
+first.
 
 Documentation Conventions
 ===========================
