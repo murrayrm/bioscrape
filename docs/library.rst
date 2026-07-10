@@ -223,7 +223,7 @@ Data and likelihoods
 PID interfaces
 -----------------
 
-.. currentmodule:: bioscrape.pid_interfaces
+.. automodule:: bioscrape.pid_interfaces
 
 .. autosummary::
    :toctree: generated/
