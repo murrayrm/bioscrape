@@ -19,7 +19,7 @@ species, reactions (with their propensities), parameters, rules, and
 (optionally) delays.
 
 Loading and Building Models
-============================
+===========================
 
 A `Model` can be constructed from an SBML file::
 
@@ -32,7 +32,7 @@ methods such as `~Model.create_reaction`, `~Model.create_parameter`,
 and `~Model.create_rule` after construction.
 
 Inspecting a Model
-====================
+==================
 
 Once a `Model` is constructed, its contents can be inspected using a
 family of accessor methods, including:
@@ -51,7 +51,7 @@ Parameter and species values can be set with `~Model.set_params` and
 `~Model.set_species`, respectively.
 
 Propensities
-=============
+============
 
 Each reaction in a `Model` has an associated `~bioscrape.types.Propensity`
 object describing its rate law.  Bioscrape includes several built-in
@@ -72,7 +72,7 @@ propensity types, including:
 expression (parsed with SymPy) to be used as a propensity function.
 
 Rules and Delays
-==================
+================
 
 `~bioscrape.types.Rule` objects implement assignment and ODE rules
 that update species or parameters outside of the reaction network
@@ -85,7 +85,7 @@ that update species or parameters outside of the reaction network
 by the delayed simulators described in :doc:`simulation`.
 
 Exporting to SBML
-===================
+=================
 
 A `Model` can be exported back to SBML with `~Model.write_sbml_model`,
 or converted to an in-memory SBML document with

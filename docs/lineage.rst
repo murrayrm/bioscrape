@@ -44,7 +44,7 @@ populations of cells that can interact with one another (e.g. through
 a shared extracellular environment).
 
 Key Classes
-=============
+===========
 
 .. autosummary::
    :toctree: generated/

@@ -39,7 +39,7 @@ object providing utilities for further analysis, and produces plots of
 the resulting posterior parameter distributions.
 
 Data Types
-============
+==========
 
 Experimental data is represented with one of the
 `~bioscrape.inference.Data` subclasses, selected automatically by
@@ -54,7 +54,7 @@ Experimental data is represented with one of the
    StochasticTrajectories
 
 Likelihoods
-=============
+===========
 
 Each `~bioscrape.inference.Data` type is paired with a
 `~bioscrape.inference.Likelihood` implementation that computes the
@@ -70,7 +70,7 @@ log-likelihood of a parameter set given the data:
    StochasticStatesLikelihood
 
 Priors
-========
+======
 
 Priors are specified as a dictionary mapping parameter name to a list
 describing the prior distribution, e.g.
@@ -82,7 +82,7 @@ Built-in prior types are implemented on
 supplied as a callable.
 
 PID Interfaces
-================
+==============
 
 `~bioscrape.pid_interfaces.PIDInterface` and its subclasses connect a
 `~bioscrape.types.Model`, a set of parameters to estimate, and a prior

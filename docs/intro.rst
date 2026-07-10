@@ -13,7 +13,7 @@ This chapter provides a brief introduction to bioscrape.
    been normalized -- see :doc:`develop` for the plan.
 
 Motivation and Background
-==========================
+=========================
 
 Bioscrape ("Bio-circuit Stochastic Single-cell Reaction Analysis and
 Parameter Estimation") is a Python package, with its simulation core
@@ -41,7 +41,7 @@ which compiles high-level circuit specifications into SBML models that
 can be simulated directly with bioscrape.
 
 The Bioscrape Framework
-=========================
+=======================
 
 Bioscrape is organized around a small number of core concepts:
 
@@ -86,7 +86,7 @@ isn't covered by a built-in subclass, look for the relevant base class
 first.
 
 Documentation Conventions
-===========================
+=========================
 
 This documentation follows the same conventions as `BioCRNpyler's
 documentation

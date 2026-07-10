@@ -28,7 +28,7 @@ the underlying result object instead (e.g.
 `~bioscrape.simulator.SSAResult`).
 
 Deterministic vs. Stochastic Simulation
-=========================================
+=======================================
 
 - `stochastic=False` (default) runs a deterministic (ODE)
   simulation via `~bioscrape.simulator.DeterministicSimulator`
@@ -38,7 +38,7 @@ Deterministic vs. Stochastic Simulation
   `~bioscrape.simulator.SSASimulator`.
 
 Delayed Reactions
-===================
+=================
 
 Passing `delay=True` selects a delay-aware simulator
 (`~bioscrape.simulator.DelaySSASimulator`), which uses a
@@ -47,7 +47,7 @@ delayed reactions (see the `~bioscrape.types.Delay` classes described
 in :doc:`model`).
 
 Volume and Lineage Simulation
-================================
+=============================
 
 Passing `volume=True` enables cell-volume tracking, used for
 simulating growing and dividing cells (see
@@ -59,7 +59,7 @@ population-level lineage tracking is provided by the
 :mod:`bioscrape.lineage` subpackage; see :doc:`lineage`.
 
 Simulator Classes
-====================
+=================
 
 .. autosummary::
    :toctree: generated/
@@ -72,7 +72,7 @@ Simulator Classes
    DelayVolumeSSASimulator
 
 Simulation Interfaces
-========================
+=====================
 
 `~bioscrape.simulator.CSimInterface` and its subclasses
 (`~bioscrape.simulator.ModelCSimInterface`,

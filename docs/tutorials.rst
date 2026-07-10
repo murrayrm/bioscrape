@@ -9,7 +9,7 @@ directories in the repository (via symlinks under ``docs/``), so they
 stay in sync with the copies used outside of the documentation build.
 
 Getting Started
-==================
+===============
 
 .. toctree::
    :maxdepth: 1
@@ -18,7 +18,7 @@ Getting Started
    examples/Advanced Examples and Developer Overview.ipynb
 
 Simulation and Analysis
-==========================
+=======================
 
 .. toctree::
    :maxdepth: 1
@@ -28,7 +28,7 @@ Simulation and Analysis
    examples/Benchmarking bioscrape performance.ipynb
 
 Parameter Inference
-======================
+===================
 
 .. toctree::
    :maxdepth: 1
@@ -38,7 +38,7 @@ Parameter Inference
    inference_examples/OD data using least squares (LMFit example).ipynb
 
 Lineage / Population Simulation
-==================================
+===============================
 
 .. toctree::
    :maxdepth: 1

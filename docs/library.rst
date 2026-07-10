@@ -1,6 +1,6 @@
-***********************
+*********************
 The Bioscrape Library
-***********************
+*********************
 
 This chapter contains reference documentation for the classes and
 functions that make up the bioscrape package, grouped by the module
@@ -17,7 +17,7 @@ so objects should be imported from their defining submodule (e.g.
    styles) until that pass is done.
 
 Model (bioscrape.types)
-==========================
+=======================
 
 .. automodule:: bioscrape.types
 
@@ -28,7 +28,7 @@ Model (bioscrape.types)
    Model
 
 Propensities
---------------
+------------
 
 Propensities define the rate law associated with a reaction.
 
@@ -48,7 +48,7 @@ Propensities define the rate law associated with a reaction.
    GeneralPropensity
 
 Delays
---------
+------
 
 .. autosummary::
    :toctree: generated/
@@ -61,7 +61,7 @@ Delays
    GammaDelay
 
 Rules
--------
+-----
 
 .. autosummary::
    :toctree: generated/
@@ -73,7 +73,7 @@ Rules
    GeneralODERule
 
 Volume
---------
+------
 
 .. autosummary::
    :toctree: generated/
@@ -84,7 +84,7 @@ Volume
    StateDependentVolume
 
 Symbolic expression terms
-----------------------------
+-------------------------
 
 These classes implement the internal parse-tree representation used
 by `~bioscrape.types.GeneralPropensity` and
@@ -113,7 +113,7 @@ expressions. They are not normally constructed directly by users.
    TimeTerm
 
 Simulation (bioscrape.simulator)
-====================================
+================================
 
 .. automodule:: bioscrape.simulator
 
@@ -124,7 +124,7 @@ Simulation (bioscrape.simulator)
    py_simulate_model
 
 Simulators
-------------
+----------
 
 .. autosummary::
    :toctree: generated/
@@ -141,7 +141,7 @@ Simulators
    DelayVolumeSSASimulator
 
 Simulation interfaces
-------------------------
+---------------------
 
 .. autosummary::
    :toctree: generated/
@@ -152,7 +152,7 @@ Simulation interfaces
    SafeModelCSimInterface
 
 Results and cell state
--------------------------
+----------------------
 
 Returned by the simulator classes above; not normally constructed
 directly by users.
@@ -171,7 +171,7 @@ directly by users.
    DelayVolumeCellState
 
 Volume splitters and delay queues
--------------------------------------
+---------------------------------
 
 Used internally by the volume- and delay-aware simulators to
 implement division and delayed-reaction scheduling.
@@ -190,7 +190,7 @@ implement division and delayed-reaction scheduling.
    ArrayDelayQueue
 
 Inference (bioscrape.inference, bioscrape.pid_interfaces)
-===============================================================
+=========================================================
 
 .. automodule:: bioscrape.inference
 
@@ -201,7 +201,7 @@ Inference (bioscrape.inference, bioscrape.pid_interfaces)
    py_inference
 
 Data and likelihoods
-------------------------
+--------------------
 
 .. autosummary::
    :toctree: generated/
@@ -221,7 +221,7 @@ Data and likelihoods
    StochasticStatesLikelihood
 
 PID interfaces
------------------
+--------------
 
 .. automodule:: bioscrape.pid_interfaces
 
@@ -235,7 +235,7 @@ PID interfaces
    LMFitInference
 
 Sensitivity Analysis (bioscrape.analysis)
-==============================================
+=========================================
 
 .. automodule:: bioscrape.analysis
 
@@ -249,7 +249,7 @@ Sensitivity Analysis (bioscrape.analysis)
    SensitivityAnalysis
 
 SBML Utilities (bioscrape.sbmlutil)
-========================================
+===================================
 
 .. automodule:: bioscrape.sbmlutil
 
@@ -273,12 +273,12 @@ directly.
    SetIdFromNames
 
 Lineage (bioscrape.lineage)
-===============================
+===========================
 
 .. automodule:: bioscrape.lineage
 
 Population model and simulators
------------------------------------
+-------------------------------
 
 .. autosummary::
    :toctree: generated/
@@ -291,7 +291,7 @@ Population model and simulators
    SafeLineageCSimInterface
 
 Events and rules
---------------------
+----------------
 
 Per-cell events (volume change, division, death) and the rules that
 govern them.
@@ -324,7 +324,7 @@ govern them.
    GeneralDeathRule
 
 Results and internals
--------------------------
+---------------------
 
 .. autosummary::
    :toctree: generated/

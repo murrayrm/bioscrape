@@ -75,7 +75,7 @@ GitHub repository file and directory layout:
 
 
 Build Environment for the Docs
-===================================
+==============================
 
 Because bioscrape's public API is implemented in Cython
 (``cdef class`` objects compiled to platform-specific ``.so`` files),
@@ -101,7 +101,7 @@ methods as the package's equivalent of a leading-underscore "private"
 convention.
 
 Adding new functionality
----------------------------
+------------------------
 
 Bioscrape's core areas (propensities, delays, rules, volumes, volume
 splitters, priors/likelihoods, and PID interfaces) are each built
@@ -126,7 +126,7 @@ in more narrative form should be in the ``.rst`` files in ``docs/``,
 where it can be incorporated into the User Guide.
 
 Current state and target convention
----------------------------------------
+-----------------------------------
 
 As of this writing, docstrings in the codebase use **three different,
 mutually incompatible conventions**:
