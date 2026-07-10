@@ -84,6 +84,51 @@ that update species or parameters outside of the reaction network
 `~bioscrape.types.GaussianDelay`, `~bioscrape.types.GammaDelay`) used
 by the delayed simulators described in :doc:`simulation`.
 
+A delay is attached to a reaction through `~Model.create_reaction`'s
+`delay_type`, `delay_reactants`, `delay_products`, and
+`delay_param_dict` arguments, rather than through a separate object.
+The reaction's ordinary `reactants`/`products` fire immediately (as
+usual); the `delay_reactants`/`delay_products` fire `delay_type` time
+units later.  For example, a delayed transcription reaction -- where
+mRNA appears a fixed time after the reaction "starts" rather than
+immediately, following the gene expression model in [Pan+23]_ --
+can be built as follows::
+
+    from bioscrape.types import Model
+
+    M = Model()
+    M.create_reaction(
+        reactants=[], products=[],
+        propensity_type='massaction', propensity_param_dict={'k': 'beta'},
+        delay_type='fixed', delay_reactants=[], delay_products=['mRNA'],
+        delay_param_dict={'delay': 'tx_delay'})
+    M.create_reaction(
+        reactants=['mRNA'], products=[],
+        propensity_type='massaction', propensity_param_dict={'k': 'delta'})
+    M.set_parameter('beta', 2)
+    M.set_parameter('delta', 0.2)
+    M.set_parameter('tx_delay', 10)
+    M.set_species({'mRNA': 0})
+
+The first reaction has no immediate reactants or products; the gene
+itself is not modeled as a species, so its (constant) copy number is
+absorbed into the rate constant `beta`, and the only effect is that
+`mRNA` is produced `tx_delay` time units after each firing.  The
+second reaction is an ordinary (undelayed) first-order degradation of
+`mRNA`.  Since delay simulations are always stochastic, simulate this
+model with `delay=True` (see :doc:`simulation`)::
+
+    from bioscrape.simulator import py_simulate_model
+    import numpy as np
+
+    timepoints = np.linspace(0, 50, 200)
+    result = py_simulate_model(timepoints, Model=M, stochastic=True, delay=True)
+
+.. [Pan+23] Pandey A, Poole W, Swaminathan A, Hsiao V, Murray RM (2023)
+   Fast and flexible simulation and parameter estimation for synthetic
+   biology using bioscrape. *Journal of Open Source Software* 8(83):5057.
+   https://doi.org/10.21105/joss.05057
+
 Exporting to SBML
 =================
 
