@@ -44,7 +44,6 @@ computation of Jacobians and parameter sensitivities using a
 deterministic simulation of the model.
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    SensitivityAnalysis

@@ -47,7 +47,6 @@ Key Classes
 ===========
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    LineageModel

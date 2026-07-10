@@ -62,7 +62,6 @@ Simulator Classes
 =================
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    DeterministicSimulator

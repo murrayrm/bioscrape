@@ -58,7 +58,6 @@ object describing its rate law.  Bioscrape includes several built-in
 propensity types, including:
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    MassActionPropensity

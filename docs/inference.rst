@@ -46,7 +46,6 @@ Experimental data is represented with one of the
 `~py_inference` based on the shape of `exp_data`:
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    BulkData
@@ -61,7 +60,6 @@ Each `~bioscrape.inference.Data` type is paired with a
 log-likelihood of a parameter set given the data:
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    DeterministicLikelihood
@@ -91,7 +89,6 @@ specification to the appropriate `~bioscrape.inference.Likelihood`:
 .. currentmodule:: bioscrape.pid_interfaces
 
 .. autosummary::
-   :toctree: generated/
    :nosignatures:
 
    PIDInterface
