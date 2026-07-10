@@ -71,6 +71,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.linkcode',
     'sphinx.ext.doctest',
+    'sphinx.ext.todo',
     'sphinx_math_dollar',
     'sphinx.ext.mathjax',
     'sphinx.ext.autosummary',
@@ -84,6 +85,10 @@ extensions = [
 ]
 
 source_suffix = ['.rst']
+
+# Show .. todo:: notes in the built docs while this project is still
+# under active development; turn off once the docs stabilize.
+todo_include_todos = True
 
 # scan documents for autosummary directives and generate stub pages for each.
 autosummary_generate = True
