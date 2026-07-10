@@ -10,17 +10,21 @@
 
 # -- Path setup --------------------------------------------------------------
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
+# Unlike BioCRNpyler (pure Python), bioscrape's public API is a
+# compiled Cython extension.  We deliberately do NOT add the raw
+# source tree to sys.path here (e.g. `sys.path.insert(0,
+# os.path.abspath('..'))`) -- the uncompiled source directory has no
+# `.so` files (they're gitignored), so putting it ahead of
+# site-packages would shadow the real, compiled installation with an
+# unimportable one.  Instead we rely entirely on `pip install .`
+# (see .readthedocs.yaml) to make `bioscrape` importable from
+# site-packages in the normal way.
 #
 import inspect
 import os
 import re
 import sys
 import sphinx
-
-sys.path.insert(0, os.path.abspath('..'))
 
 # Use the readthedocs.org theme if installed
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
