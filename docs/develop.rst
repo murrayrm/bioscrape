@@ -165,6 +165,16 @@ The guiding principle, consistent with the `numpydoc style guide
    precedence over contorting docstrings so our tools produce nice
    output.
 
+* Fill docstring text to close to 78 characters per line (greedy
+  word-wrap, not just "stay under 78"), so the number of lines is
+  minimized. This is specifically about the docstring *text* (not
+  code lines in general) -- the goal is that docstrings stay readable
+  *and* compact when viewed with ``help()`` or ``obj.__doc__`` in an
+  interactive session, which doesn't rewrap long lines. When
+  rewrapping, don't let a wrap point fall inside a single-backtick
+  code span (e.g. ``\`code\```) or a ``$math$`` span -- keep those
+  intact on one line even if that leaves a little room unused.
+
 * Use single backticks around all Python objects. This documentation
   sets Sphinx's ``default_role`` to ``py:obj``, so a single backtick
   renders in code form and links to the object's documentation if it
@@ -222,6 +232,16 @@ Follow numpydoc format with the following additional details:
   docstrings move to the class docstring, at which point
   ``autoclass_content`` can switch to ``'class'`` to match
   BioCRNpyler.
+
+  - Gotcha: while ``autoclass_content = 'both'`` is still in effect,
+    giving a migrated class's ``__init__`` *no* docstring at all is
+    not safe if it subclasses another bioscrape class whose
+    ``__init__`` still holds real content (most of them, for now) --
+    Sphinx falls back to the inherited (parent's) ``__init__``
+    docstring, which documents the wrong constructor. Give the
+    migrated ``__init__`` a one-line stub instead, e.g. ``"""See
+    class docstring."""``, until the whole hierarchy is migrated and
+    ``autoclass_content`` can switch to ``'class'``.
 * Parameters that are also attributes only need to be documented once.
 * Attributes created within a class that are of interest to users
   should be documented in an "Attributes" section.
