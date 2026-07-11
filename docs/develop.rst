@@ -213,8 +213,9 @@ The guiding principle, consistent with the `numpydoc style guide
 * Built-in Python objects (True, False, None) should be written with
   no backticks and properly capitalized.
 
-* Strings used as arguments should be in single (forward) ticks
-  (``'eval'``, ``'uniform'``) and do not need to be rendered as code.
+* Strings used as arguments should be written in plain single quotes,
+  e.g. ``'eval'``, ``'uniform'`` -- do not additionally wrap them in
+  double backticks as inline code.
 
 Function docstrings
 -------------------
