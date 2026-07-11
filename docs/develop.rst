@@ -175,6 +175,16 @@ The guiding principle, consistent with the `numpydoc style guide
   code span (e.g. ``\`code\```) or a ``$math$`` span -- keep those
   intact on one line even if that leaves a little room unused.
 
+* The one-line summary (the first line of the docstring's text) must
+  fit on a single physical line and must not exceed 75 characters,
+  per the `numpydoc format guide
+  <https://numpydoc.readthedocs.io/en/latest/format.html>`_ -- several
+  characters stricter than the 78-character rule above for the rest of
+  the docstring body. If a summary doesn't fit in 75 characters,
+  shorten it (move detail into the extended summary or the
+  Parameters/Returns sections below) rather than wrapping it onto a
+  second line.
+
 * Use single backticks around all Python objects. This documentation
   sets Sphinx's ``default_role`` to ``py:obj``, so a single backtick
   renders in code form and links to the object's documentation if it
