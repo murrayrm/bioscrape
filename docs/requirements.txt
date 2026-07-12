@@ -8,4 +8,5 @@ recommonmark
 pandoc
 numpydoc
 sphinx-math-dollar
+matplotlib
 tomli; python_version < "3.11"

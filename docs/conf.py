@@ -86,7 +86,18 @@ extensions = [
     'nbsphinx_link',
     'recommonmark',
     'numpydoc',
+    'matplotlib.sphinxext.plot_directive',
 ]
+
+# matplotlib.sphinxext.plot_directive: run the code in `.. plot::` blocks
+# at build time and embed the resulting figure.  Ships with matplotlib
+# itself (already a bioscrape dependency, see pyproject.toml), so no
+# extra package is required.  Used in simulation.rst for worked
+# examples with live-generated plots.
+plot_include_source = True
+plot_html_show_source_link = False
+plot_html_show_formats = False
+plot_formats = [('png', 110)]
 
 source_suffix = ['.rst']
 
