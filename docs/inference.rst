@@ -29,11 +29,12 @@ user-facing entry point is
         prior=prior)
 
 `~py_inference` returns the `emcee` sampler object (containing the
-full set of MCMC samples) along with an ``InferenceSetup`` object --
-the object that orchestrates the run and, internally, owns the
-appropriate `~bioscrape.pid_interfaces.PIDInterface` -- a parameter
-identification (PID) interface -- for the requested `sim_type`
-(described below).  Unless `plot_show=False` is passed,
+full set of MCMC samples) along with an
+`~bioscrape.inference_setup.InferenceSetup` object -- the object that
+orchestrates the run and, internally, owns the appropriate
+`~bioscrape.pid_interfaces.PIDInterface` -- a parameter identification
+(PID) interface -- for the requested `sim_type` (described below).
+Unless `plot_show=False` is passed,
 `~py_inference` also produces plots of the resulting posterior
 parameter distributions, and it always writes the raw MCMC samples and
 a summary of the fit to ``mcmc_results.csv`` and ``mcmc_results.txt``

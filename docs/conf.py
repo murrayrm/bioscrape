@@ -211,6 +211,7 @@ _bioscrape_submodules = [
     'bioscrape.types',
     'bioscrape.simulator',
     'bioscrape.inference',
+    'bioscrape.inference_setup',
     'bioscrape.analysis',
     'bioscrape.pid_interfaces',
     'bioscrape.sbmlutil',

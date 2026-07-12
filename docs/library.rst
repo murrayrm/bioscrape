@@ -189,8 +189,8 @@ implement division and delayed-reaction scheduling.
    DelayQueue
    ArrayDelayQueue
 
-Inference (bioscrape.inference, bioscrape.pid_interfaces)
-=========================================================
+Inference (bioscrape.inference, bioscrape.inference_setup, bioscrape.pid_interfaces)
+======================================================================================
 
 .. automodule:: bioscrape.inference
 
@@ -233,6 +233,24 @@ Parameter identification (PID) interfaces
    StochasticInference
    DeterministicInference
    LMFitInference
+
+Inference orchestration
+------------------------
+
+`~bioscrape.inference.py_inference` constructs and returns an
+`~bioscrape.inference_setup.InferenceSetup`, which holds the model,
+data, and settings for a run and provides
+`~bioscrape.inference_setup.InferenceSetup.run_mcmc` and
+`~bioscrape.inference_setup.InferenceSetup.run_lmfit` to perform it.
+
+.. automodule:: bioscrape.inference_setup
+
+.. autosummary::
+   :toctree: generated/
+   :nosignatures:
+
+   initialize_inference
+   InferenceSetup
 
 Sensitivity Analysis (bioscrape.analysis)
 =========================================
