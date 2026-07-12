@@ -4,17 +4,6 @@
 Introduction
 ************
 
-This chapter provides a brief introduction to bioscrape.
-
-.. todo::
-
-   This chapter is a placeholder.  Expand with a proper motivation and
-   overview section once the reference documentation (docstrings) has
-   been normalized -- see :doc:`develop` for the plan.
-
-Motivation and Background
-=========================
-
 Bioscrape ("Bio-circuit Stochastic Single-cell Reaction Analysis and
 Parameter Estimation") is a Python package, with its simulation core
 written in Cython and compiled to native code, for simulating and
@@ -27,12 +16,13 @@ dynamics.  Bioscrape also provides Bayesian parameter inference tools
 for fitting model parameters to experimental data.
 
 Because the simulation core is compiled rather than interpreted,
-simulation run times are close to what you would get from hand-written
-C.  This matters most for workloads that require many repeated
-simulations of the same model -- MCMC-based parameter inference
-(:doc:`inference`) and simulation of large lineages of dividing cells
-(:doc:`lineage`) in particular -- where simulation speed directly
-determines how long an analysis takes to run.
+bioscrape's simulations run at speeds comparable to the fastest
+available SBML simulators, and much faster than GUI-based tools such
+as MATLAB's SimBiology or COPASI.  This matters most for workloads
+that require many repeated simulations of the same model -- MCMC-based
+parameter inference (:doc:`inference`) and simulation of large lineages
+of dividing cells (:doc:`lineage`) in particular -- where simulation
+speed directly determines how long an analysis takes to run.
 
 Bioscrape is designed to be usable on its own, or as the simulation
 and inference back end for higher-level model-construction tools such
@@ -45,27 +35,27 @@ The Bioscrape Framework
 
 Bioscrape is organized around a small number of core concepts:
 
-**Models** (:class:`~bioscrape.types.Model`) hold the species,
+*Models* (:class:`~bioscrape.types.Model`) hold the species,
 reactions, propensities, parameters, rules, and (optionally) delays
 that define a CRN.  Models can be constructed programmatically or
 loaded from SBML.  See :doc:`model` for details.
 
-**Simulators** (:mod:`bioscrape.simulator`) take a model and produce
+*Simulators* (:mod:`bioscrape.simulator`) take a model and produce
 simulated trajectories, either deterministically or stochastically,
 with optional support for reaction delays and dividing-cell volume
 dynamics.  See :doc:`simulation`.
 
-**Inference** (:mod:`bioscrape.inference`,
+*Inference* (:mod:`bioscrape.inference`,
 :mod:`bioscrape.pid_interfaces`) fits model parameters to experimental
 data (bulk, flow cytometry, or single-cell trajectories) using
 Bayesian (MCMC) methods, with a library of built-in priors and
 likelihood functions. See :doc:`inference`.
 
-**Sensitivity Analysis** (:mod:`bioscrape.analysis`) computes the
+*Sensitivity Analysis* (:mod:`bioscrape.analysis`) computes the
 local sensitivity of simulated trajectories to model parameters. See
 :doc:`sensitivity`.
 
-**Lineage** (:mod:`bioscrape.lineage`) extends the simulation
+*Lineage* (:mod:`bioscrape.lineage`) extends the simulation
 machinery to populations of dividing and interacting cells. See
 :doc:`lineage`.
 
@@ -76,14 +66,39 @@ implementation: propensities (`~bioscrape.types.Propensity`), delays
 (`~bioscrape.types.Volume`), volume splitters
 (`~bioscrape.simulator.VolumeSplitter`), priors and likelihoods
 (`~bioscrape.inference.Distribution`,
-`~bioscrape.inference.Likelihood`), and PID interfaces
-(`~bioscrape.pid_interfaces.PIDInterface`) are all base classes with
+`~bioscrape.inference.Likelihood`), and parameter identification
+(PID) interfaces (`~bioscrape.pid_interfaces.PIDInterface`) are all
+base classes with
 several built-in subclasses.  This is a deliberate design choice: each
 of these is meant to be extended with a custom subclass -- a new
 propensity type, a custom division rule, a new prior -- without
 needing to modify the rest of the package.  If you need behavior that
 isn't covered by a built-in subclass, look for the relevant base class
 first.
+
+Installation
+============
+
+The core bioscrape package is available from PyPI::
+
+    pip install bioscrape
+
+Because bioscrape's simulation core is a Cython extension, installing
+it requires a C++ compiler to be available on your system.  Bioscrape
+requires Python 3.7 or later.
+
+The PyPI package installs the core package only; the optional
+:doc:`lineage` subpackage (for population/lineage simulation) is not
+included.  To use it, clone the source repository and install with the
+``lineage`` argument::
+
+    git clone https://github.com/biocircuits/bioscrape.git
+    cd bioscrape
+    python setup.py install lineage
+
+To try bioscrape without installing anything, the example notebooks
+can be run in the browser through the Google Colab links in the
+project's `README <https://github.com/biocircuits/bioscrape>`_.
 
 Documentation Conventions
 =========================
