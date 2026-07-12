@@ -220,8 +220,8 @@ Data and likelihoods
    StochasticTrajectoryMomentLikelihood
    StochasticStatesLikelihood
 
-PID interfaces
---------------
+Parameter identification (PID) interfaces
+-----------------------------------------
 
 .. automodule:: bioscrape.pid_interfaces
 
@@ -276,6 +276,25 @@ Lineage (bioscrape.lineage)
 ===========================
 
 .. automodule:: bioscrape.lineage
+
+Simulation entry points
+-----------------------
+
+Module-level functions for running lineage simulations; see
+:doc:`lineage` for how they differ.
+
+.. autosummary::
+   :toctree: generated/
+   :nosignatures:
+
+   py_SimulateCellLineage
+   py_PropagateCells
+   py_SingleCellLineage
+   py_SimulateSingleCell
+   py_SimulateTurbidostat
+   py_set_up_InteractingLineage
+   py_PropagateInteractingCells
+   py_SimulateInteractingCellLineage
 
 Population model and simulators
 -------------------------------

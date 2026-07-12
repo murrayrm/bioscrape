@@ -20,12 +20,12 @@ The bioscrape package is maintained on GitHub:
   * Issue tracker: https://github.com/biocircuits/bioscrape/issues
 
 GitHub repository file and directory layout:
-  - **bioscrape/** - main repository
+  - bioscrape/ - main repository
 
     * LICENSE, MANIFEST.in, pyproject.toml, setup.py, README.md -
       package information
 
-    * **bioscrape/** - primary package source code (Cython)
+    * bioscrape/ - primary package source code (Cython)
 
       + ``__init__.py`` - imports the compiled submodules and seeds
         the RNG
@@ -45,12 +45,12 @@ GitHub repository file and directory layout:
 
       + ``random.pyx`` - random number generation
 
-    * **lineage/** - the optional lineage/population-simulation
+    * lineage/ - the optional lineage/population-simulation
       extension (``lineage.pyx``), installed separately
       (``python setup.py install lineage``, or via the ``lineage``
       argument at the bottom of ``setup.py``)
 
-    * **docs/** - user guide and reference manual (this documentation)
+    * docs/ - user guide and reference manual (this documentation)
 
       + ``index.rst`` - main documentation index
 
@@ -67,11 +67,11 @@ GitHub repository file and directory layout:
         top-level example directories, so ``nbsphinx`` can render them
         without duplicating content
 
-    * **examples/**, **inference examples/**, **lineage examples/**
+    * examples/, inference examples/, lineage examples/
       - Jupyter notebooks and example SBML/data files (note the
       spaces in the two latter directory names)
 
-    * **tests/**, **lineage tests/** - pytest test suites
+    * tests/, lineage tests/ - pytest test suites
 
 
 Build Environment for the Docs
@@ -104,7 +104,8 @@ Adding new functionality
 ------------------------
 
 Bioscrape's core areas (propensities, delays, rules, volumes, volume
-splitters, priors/likelihoods, and PID interfaces) are each built
+splitters, priors/likelihoods, and parameter identification (PID)
+interfaces) are each built
 around a base class with a family of interchangeable subclasses -- see
 :doc:`intro`. New functionality should follow this pattern: add a
 subclass of the relevant base class (`~bioscrape.types.Propensity`,
@@ -128,8 +129,8 @@ where it can be incorporated into the User Guide.
 Current state and target convention
 -----------------------------------
 
-As of this writing, docstrings in the codebase use **three different,
-mutually incompatible conventions**:
+As of this writing, docstrings in the codebase use *three different,
+mutually incompatible conventions*:
 
 * Sphinx field-list style (``:param x: ...``) in ``types.pyx`` and
   ``simulator.pyx`` -- renders correctly today with plain autodoc.
@@ -137,12 +138,12 @@ mutually incompatible conventions**:
   correctly today via ``sphinx.ext.napoleon`` (Google support is
   enabled by default).
 * An ad hoc bullet-list style (`` * `param_name` : description ``) in
-  ``pid_interfaces.py`` and most of ``inference.pyx`` -- **not**
+  ``pid_interfaces.py`` and most of ``inference.pyx`` -- *not*
   parsed by any Sphinx convention; renders as plain, unlinked bullet
   text.
 
 Going forward, new and updated docstrings should follow the
-**numpydoc** convention (as BioCRNpyler does), since this project and
+*numpydoc* convention (as BioCRNpyler does), since this project and
 BioCRNpyler share maintainers, contributors, and (increasingly)
 audience:
 
@@ -214,7 +215,7 @@ The guiding principle, consistent with the `numpydoc style guide
   no backticks and properly capitalized.
 
 * Strings used as arguments should be written in plain single quotes,
-  e.g. ``'eval'``, ``'uniform'`` -- do not additionally wrap them in
+  e.g. 'eval', 'uniform' -- do not additionally wrap them in
   double backticks as inline code.
 
 Function docstrings
@@ -241,7 +242,7 @@ Follow numpydoc format with the following additional details:
   instead -- ``conf.py`` sets ``autoclass_content = 'both'`` so both
   are shown in the meantime; this should be revisited once the
   docstrings move to the class docstring, at which point
-  ``autoclass_content`` can switch to ``'class'`` to match
+  ``autoclass_content`` can switch to 'class' to match
   BioCRNpyler.
 
   - Gotcha: while ``autoclass_content = 'both'`` is still in effect,
@@ -252,7 +253,7 @@ Follow numpydoc format with the following additional details:
     docstring, which documents the wrong constructor. Give the
     migrated ``__init__`` a one-line stub instead, e.g. ``"""See
     class docstring."""``, until the whole hierarchy is migrated and
-    ``autoclass_content`` can switch to ``'class'``.
+    ``autoclass_content`` can switch to 'class'.
 * Parameters that are also attributes only need to be documented once.
 * Attributes created within a class that are of interest to users
   should be documented in an "Attributes" section.
